@@ -164,7 +164,7 @@ Add screenshots here:
 
 ## 👨‍💻 Developed By
 
-**Your Name**
+**M Sidhardha**
 
 Computer Science Engineering
 
