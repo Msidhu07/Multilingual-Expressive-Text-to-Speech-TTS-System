@@ -1,177 +1,98 @@
-# 🎤 Multilingual Expressive Text-to-Speech (TTS) System
+# Multilingual Expressive Text-to-Speech (TTS) System
 
-## 📌 Project Overview
+A multilingual Text-to-Speech web application that converts text into speech for English, Hindi, Telugu, and Kannada.
 
-The Multilingual Expressive Text-to-Speech (TTS) System is a web application that converts text into natural-sounding speech in multiple Indian languages. It is built using React for the frontend and FastAPI for the backend.
-
-The system supports English, Hindi, Telugu, and Kannada. English, Hindi, and Telugu use Piper TTS for offline speech synthesis, while Kannada uses gTTS because a suitable offline open-source Kannada model was not available during development.
+The system provides a simple React-based web interface and a FastAPI backend. The core speech generation uses locally installed open-source TTS models and can run without an active internet connection after the required models and dependencies are installed.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎤 Text to Speech
-- 🌐 English
-- 🇮🇳 Hindi
-- తెలుగు Telugu
-- ಕನ್ನಡ Kannada
-- 📄 PDF to Speech
-- 📄 TXT File to Speech
-- 😊 Emotion Selection
-- 🎙 Voice Selection (UI)
-- 📋 Copy Text
-- 🗑 Clear Text
-- 🔢 Character Counter
-- 📝 Word Counter
-- ⏳ Loading Indicator
-- 🎧 Audio Player
-- ⬇ Download Generated Audio
-- 📱 Responsive UI
+- Text-to-Speech generation
+- Support for four languages:
+  - English
+  - Hindi
+  - Telugu
+  - Kannada
+- Local/offline speech generation
+- Open-source TTS models
+- Play generated audio in the browser
+- Download generated speech as `.wav`
+- Emotion selection in the UI
+- Voice selection in the UI
+- Character counter
+- Word counter
+- Copy text button
+- Clear text button
+- PDF to Speech
+- TXT to Speech
+- Loading indicator while generating speech
+- Error and success messages
+- Clean and responsive web interface
 
 ---
 
-## 🛠 Technologies Used
+## Technology Stack
 
 ### Frontend
 
-- React.js
+- React
+- Vite
 - Axios
-- CSS
+- HTML/CSS
 
 ### Backend
 
-- FastAPI
 - Python
+- FastAPI
+- Uvicorn
 
-### TTS Models
+### TTS Engines
 
-- Piper TTS
-- gTTS
+- Piper for English, Hindi, and Telugu
+- MMS VITS for Kannada
 
-### Other Libraries
-
-- PyPDF2
-- python-multipart
+All core speech generation is performed locally using installed models.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```
-Multilingual-TTS/
-
+```text
+multilingual-expressive-tts/
 │
 ├── backend/
 │   ├── app.py
 │   ├── tts_engine.py
+│   ├── requirements.txt
+│   ├── test_kannada.py
+│   │
 │   ├── models/
+│   │   ├── en_US-lessac-medium.onnx
+│   │   ├── te_IN-maya-medium.onnx
+│   │   ├── hi_IN-pratham-medium.onnx
+│   │   └── kannada-mms/
+│   │
 │   └── outputs/
 │
 ├── frontend/
-│   ├── src/
-│   ├── components/
-│   ├── App.jsx
-│   └── App.css
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   ├── index.html
+│   │
+│   └── src/
+│       ├── App.jsx
+│       ├── App.css
+│       ├── index.css
+│       ├── main.jsx
+│       │
+│       └── components/
+│           └── TTSForm.jsx
 │
-├── requirements.txt
-├── README.md
-└── report.pdf
-```
-
----
-
-## 🚀 Installation
-
-### Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
-### Backend
-
-```bash
-cd backend
-
-pip install -r requirements.txt
-
-uvicorn app:app --reload
-```
-
-Backend runs on
-
-```
-http://127.0.0.1:8000
-```
-
-### Frontend
-
-```bash
-cd frontend
-
-npm install
-
-npm run dev
-```
-
-Frontend runs on
-
-```
-http://localhost:5173
-```
-
----
-
-## 🎯 Supported Languages
-
-| Language | Engine |
-|----------|--------|
-| English | Piper |
-| Hindi | Piper |
-| Telugu | Piper |
-| Kannada | gTTS |
-
----
-
-## 📄 Supported File Formats
-
-- TXT
-- PDF
-
----
-
-## 📷 Screenshots
-
-Add screenshots here:
-
-- Home Page
-- Generate Speech
-- PDF Upload
-- TXT Upload
-- Audio Player
-
----
-
-## 📈 Future Improvements
-
-- More Indian Languages
-- Offline Kannada Model
-- Emotion-based Speech Synthesis
-- Speed Control
-- Pitch Control
-
----
-
-## 👨‍💻 Developed By
-
-**M Sidhardha**
-
-Computer Science Engineering
-
-2026
-
----
-
-## 📜 License
-
-This project is developed for educational purposes.
+├── report/
+│   └── Project Report.pdf
+│
+├── screenshots/
+│
+└── README.md
